@@ -181,7 +181,7 @@ export default function HousewarmingInvite() {
             <div className="flex items-center justify-center gap-2 text-stone-700 text-sm pt-1">
               <Phone size={16} className="text-amber-700 shrink-0" />
               <a href="tel:+91000000000" className="font-semibold text-amber-900 underline underline-offset-4">
-                +91 00000 00000
+                +91000000000
               </a>
             </div>
 
