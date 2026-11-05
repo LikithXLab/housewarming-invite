@@ -11,6 +11,7 @@ export default function HousewarmingInvite() {
   const [rsvpState, setRsvpState] = useState<'attending' | 'missing' | null>(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
 
+  // Event Date: 22nd November 2026 at 10:00 AM
   const eventDate = new Date('2026-11-22T10:00:00');
 
   useEffect(() => {
@@ -70,6 +71,7 @@ export default function HousewarmingInvite() {
     <main className="flex justify-center min-h-screen bg-[#f7f3ee]">
       <div className="w-full max-w-md bg-[#faf7f2] min-h-screen shadow-2xl relative overflow-x-hidden pb-12 font-serif text-stone-800">
         
+        {/* Audio Toggle */}
         {isOpen && (
           <button
             onClick={toggleSound}
@@ -80,17 +82,16 @@ export default function HousewarmingInvite() {
           </button>
         )}
 
-        {/* 1. Door Cover */}
+        {/* 1. Cover Screen */}
         <div
           className={`absolute inset-0 bg-[#f4ebe1] z-40 flex flex-col items-center justify-center p-6 text-center transition-transform duration-1000 ease-in-out ${
             isOpen ? '-translate-y-full pointer-events-none' : 'translate-y-0'
           }`}
         >
           <div className="p-8 border border-amber-300/60 rounded-2xl bg-white/70 backdrop-blur-sm shadow-xl max-w-xs w-full flex flex-col items-center">
-            <p className="text-xs uppercase tracking-[0.25em] text-amber-800 font-sans mb-1">ಆತ್ಮೀಯ ಸ್ವಾಗತ</p>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-stone-500 font-sans mb-3">Cordially Invited</p>
-            <h1 className="text-2xl text-amber-900 mb-1 font-semibold tracking-wide">ಗೃಹಪ್ರವೇಶ ಸಮಾರಂಭ</h1>
-            <p className="text-xs font-sans italic text-stone-600 mb-6">House Warming Ceremony</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-amber-800 font-sans mb-2">You are cordially invited</p>
+            <h1 className="text-2xl text-amber-900 mb-1 font-semibold tracking-wide">House Warming Ceremony</h1>
+            <p className="text-xs font-sans italic text-stone-600 mb-6">Griha Pravesha</p>
             
             <button
               onClick={handleOpenInvitation}
@@ -100,52 +101,49 @@ export default function HousewarmingInvite() {
                 <Key size={24} className="rotate-45" />
               </div>
               <span className="text-xs font-sans tracking-widest text-amber-900 font-medium uppercase border-b border-amber-500 pb-0.5">
-                ಆಮಂತ್ರಣ ತೆರೆಯಿರಿ • Open Invitation
+                Open Invitation
               </span>
             </button>
           </div>
         </div>
 
-        {/* 2. Invitation Content */}
+        {/* 2. Main Invitation Content */}
         <div className="p-6 space-y-7 text-center pt-8">
           
+          {/* Header & Blessings */}
           <div className="space-y-2">
             <h2 className="text-xl font-bold text-amber-900 tracking-wide">
-              ॥ ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ॥
+              || Shree Ganeshaya Namaha ||
             </h2>
             <p className="text-xs font-sans text-stone-500 italic">
-              || Shree Ganeshaya Namaha ||
+              May Lord Ganesha bless our home with peace and prosperity
             </p>
             <h3 className="text-lg font-semibold text-stone-800 pt-2">
-              ಗೃಹಪ್ರವೇಶದ ಶುಭ ಸಂದರ್ಭ
+              A Warm Invitation
             </h3>
             <p className="text-xs font-sans text-stone-600 px-3 leading-relaxed">
-              ನಮ್ಮ ನೂತನ ಮನೆಗೆ ಪ್ರವೇಶಿಸುತ್ತಿರುವ ಈ ಶುಭ ಸಂದರ್ಭದಲ್ಲಿ, ತಾವು ಕುಟುಂಬ ಸಮೇತರಾಗಿ ಆಗಮಿಸಿ ನಮ್ಮನ್ನು ಆಶೀರ್ವದಿಸಬೇಕಾಗಿ ವಿನಂತಿ.
-            </p>
-            <p className="text-xs font-sans text-stone-500 px-3 leading-relaxed italic pt-1">
-              With the divine blessings of Lord Ganesha, we cordially invite you and your family to join us for our House Warming Ceremony and bless our new home.
+              As we step into our new home with gratitude and joy, we warmly invite you and your family to join us to celebrate and bless our new beginning.
             </p>
           </div>
 
-          {/* Ornamental Centerpiece */}
+          {/* Centerpiece Banner */}
           <div className="rounded-2xl p-6 shadow-md border border-amber-200 bg-gradient-to-b from-amber-50/60 to-white flex flex-col items-center justify-center space-y-2">
             <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center text-amber-800 mb-1 shadow-sm">
               <Home size={32} />
             </div>
             <div className="flex items-center gap-1.5 text-amber-900 font-semibold text-base">
               <Sparkles size={16} className="text-amber-600" />
-              <span>ನಮ್ಮ ನೂತನ ನಿವಾಸ</span>
+              <span>Our New Residence</span>
               <Sparkles size={16} className="text-amber-600" />
             </div>
             <p className="text-xs font-sans text-stone-500 tracking-wide uppercase">
-              Our New Residence
+              Bengaluru, Karnataka
             </p>
           </div>
 
           {/* Countdown */}
           <div className="bg-white/80 backdrop-blur-sm border border-amber-200/80 rounded-2xl p-5 shadow-sm">
-            <p className="text-[11px] font-sans uppercase tracking-[0.2em] text-amber-800 mb-1">ಸಮಾರಂಭದ ಸಮಯ</p>
-            <p className="text-[10px] font-sans uppercase tracking-[0.15em] text-stone-400 mb-3">Countdown to Ceremony</p>
+            <p className="text-[11px] font-sans uppercase tracking-[0.2em] text-amber-800 mb-3">Countdown to Ceremony</p>
             <div className="grid grid-cols-4 gap-2 font-sans">
               <div className="bg-[#f9f5f0] p-2 rounded-lg">
                 <span className="text-xl font-bold text-stone-800">{timeLeft.days}</span>
@@ -168,7 +166,7 @@ export default function HousewarmingInvite() {
 
           {/* Venue & Timing */}
           <div className="bg-white/80 backdrop-blur-sm border border-amber-200/80 rounded-2xl p-5 shadow-sm space-y-3 font-sans">
-            <h3 className="font-serif text-lg text-amber-900">ಸ್ಥಳ ಮತ್ತು ದಿನಾಂಕ • Venue Details</h3>
+            <h3 className="font-serif text-lg text-amber-900">Venue & Date</h3>
             
             <div className="flex items-center justify-center gap-2 text-stone-700 text-sm">
               <Calendar size={16} className="text-amber-700 shrink-0" />
@@ -197,9 +195,9 @@ export default function HousewarmingInvite() {
             </a>
           </div>
 
-          {/* RSVP Section */}
+          {/* RSVP */}
           <div className="bg-white/80 backdrop-blur-sm border border-amber-200/80 rounded-2xl p-6 shadow-sm font-sans space-y-4">
-            <h4 className="font-serif text-base text-amber-900">ಆಗಮಿಸುವಿರಾ? • Will You Celebrate With Us?</h4>
+            <h4 className="font-serif text-base text-amber-900">Will You Celebrate With Us?</h4>
             <div className="flex gap-3 justify-center">
               <button
                 onClick={() => handleRSVP(true)}
@@ -208,3 +206,11 @@ export default function HousewarmingInvite() {
                     ? 'bg-amber-600 text-white shadow-md'
                     : 'bg-amber-100 text-amber-900 hover:bg-amber-200'
                 }`}
+              >
+                I'll Be There
+              </button>
+              <button
+                onClick={() => handleRSVP(false)}
+                className={`flex-1 py-3 rounded-xl text-sm font-medium border transition ${
+                  rsvpState === 'missing'
+                    ? 'bg-stone-200 text-stone-800 border-stone-400'
