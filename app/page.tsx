@@ -7,8 +7,8 @@ import { Volume2, VolumeX, Key, MapPin, Calendar, Home, Sparkles } from 'lucide-
 export default function HousewarmingInvite() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [rsvpState, setRsvpState] = useState<'attending' | 'missing' | null>(null);
+  const [audio, setAudio] = useState(null);
+  const [rsvpState, setRsvpState] = useState(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
 
   // Event Date: 22nd November 2026 at 10:00 AM
@@ -56,7 +56,7 @@ export default function HousewarmingInvite() {
     }
   };
 
-  const handleRSVP = (attending: boolean) => {
+  const handleRSVP = (attending) => {
     setRsvpState(attending ? 'attending' : 'missing');
     if (attending) {
       confetti({
@@ -68,7 +68,7 @@ export default function HousewarmingInvite() {
   };
 
   return (
-    <main className="flex justify-center min-h-screen bg-[#f7f3ee]">
+    <div className="flex justify-center min-h-screen bg-[#f7f3ee]">
       <div className="w-full max-w-md bg-[#faf7f2] min-h-screen shadow-2xl relative overflow-x-hidden pb-12 font-serif text-stone-800">
         
         {/* Audio Toggle */}
@@ -218,3 +218,4 @@ export default function HousewarmingInvite() {
               <p className="text-sm text-amber-800 font-medium">
                 Thank you! Can't wait to celebrate with you! 🎉
               </p>
+            )}
