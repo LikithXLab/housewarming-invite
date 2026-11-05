@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Volume2, VolumeX, Key, MapPin, Calendar } from 'lucide-react';
+import { Volume2, VolumeX, Key, MapPin, Calendar, Phone } from 'lucide-react';
 
 export default function HousewarmingInvite() {
   const [isOpen, setIsOpen] = useState(false);
@@ -145,25 +145,33 @@ export default function HousewarmingInvite() {
             </div>
           </div>
 
+                    {/* Venue & Timing */}
           <div className="bg-white/80 backdrop-blur-sm border border-amber-200/80 rounded-2xl p-5 shadow-sm space-y-3 font-sans">
             <h3 className="font-serif text-lg text-amber-900">Venue Details</h3>
             <div className="flex items-center justify-center gap-2 text-stone-700 text-sm">
-              <Calendar size={16} className="text-amber-700" />
-              <span>15 November 2026, 10:00 AM</span>
+              <Calendar size={16} className="text-amber-700 shrink-0" />
+              <span>22 November 2026, 10:00 AM</span>
             </div>
-            <div className="flex items-center justify-center gap-2 text-stone-700 text-sm">
-              <MapPin size={16} className="text-amber-700" />
-              <span>Plot 42, Green Avenue, Kerala, India</span>
+            <div className="flex items-start justify-center gap-2 text-stone-700 text-sm text-center px-2">
+              <MapPin size={16} className="text-amber-700 shrink-0 mt-0.5" />
+              <span>Kempapura, Kumbarahalli Main Rd Opp sampadha gas godown Chikkabanavara, Kempapura, Karnataka 560090</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-stone-700 text-sm pt-1">
+              <Phone size={16} className="text-amber-700 shrink-0" />
+              <a href="tel:+91000000000" className="font-semibold text-amber-900 underline underline-offset-4">
+                +91 00000 0000
+              </a>
             </div>
             <a
-              href="https://maps.app.goo.gl/67J4Rj3k3KnjR5Go7"
+              href="https://goo.gl"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-2 text-xs bg-stone-900 text-amber-100 px-5 py-2.5 rounded-full font-medium tracking-wide shadow-sm hover:bg-stone-800 transition"
+              className="inline-block mt-3 text-xs bg-stone-900 text-amber-100 px-5 py-2.5 rounded-full font-medium tracking-wide shadow-sm hover:bg-stone-800 transition"
             >
               Open in Google Maps
             </a>
           </div>
+
 
           <div className="bg-white/80 backdrop-blur-sm border border-amber-200/80 rounded-2xl p-6 shadow-sm font-sans space-y-4">
             <h4 className="font-serif text-lg text-amber-900">Will You Celebrate With Us?</h4>
