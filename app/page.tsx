@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Volume2, VolumeX, Key, MapPin, Calendar, Phone } from 'lucide-react';
+import { Volume2, VolumeX, Key, MapPin, Calendar, Phone, Home, Sparkles } from 'lucide-react';
 
 export default function HousewarmingInvite() {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,7 +76,7 @@ export default function HousewarmingInvite() {
           <button
             onClick={toggleSound}
             aria-label="Toggle Sound"
-            className="fixed top-4 right-4 z-50 bg-stone-900/60 backdrop-blur-sm text-white p-2 rounded-full shadow-lg"
+            className="fixed top-4 right-4 z-50 bg-stone-900/60 backdrop-blur-sm text-white p-2 rounded-full shadow-lg hover:bg-stone-900 transition"
           >
             {isPlaying ? <Volume2 size={18} /> : <VolumeX size={18} />}
           </button>
@@ -126,17 +126,23 @@ export default function HousewarmingInvite() {
               ನಮ್ಮ ನೂತನ ಮನೆಗೆ ಪ್ರವೇಶಿಸುತ್ತಿರುವ ಈ ಶುಭ ಸಂದರ್ಭದಲ್ಲಿ, ತಾವು ಕುಟುಂಬ ಸಮೇತರಾಗಿ ಆಗಮಿಸಿ ನಮ್ಮನ್ನು ಆಶೀರ್ವದಿಸಬೇಕಾಗಿ ವಿನಂತಿ.
             </p>
             <p className="text-xs font-sans text-stone-500 px-3 leading-relaxed italic pt-1">
-              With the blessings of Lord Ganesha, we cordially invite you and your family to join us for our House Warming Ceremony and bless our new home.
+              With the divine blessings of Lord Ganesha, we cordially invite you and your family to join us for our House Warming Ceremony and bless our new home.
             </p>
           </div>
 
-          {/* House Image Card */}
-          <div className="rounded-2xl overflow-hidden shadow-md border-4 border-white bg-white">
-            <img
-              src="https://unsplash.com"
-              alt="Our New Home"
-              className="w-full h-56 object-cover"
-            />
+          {/* Ornamental Centerpiece Card (No broken image) */}
+          <div className="rounded-2xl p-6 shadow-md border border-amber-200 bg-gradient-to-b from-amber-50/60 to-white flex flex-col items-center justify-center space-y-2">
+            <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center text-amber-800 mb-1 shadow-sm">
+              <Home size={32} />
+            </div>
+            <div className="flex items-center gap-1.5 text-amber-900 font-semibold text-base">
+              <Sparkles size={16} className="text-amber-600" />
+              <span>ನಮ್ಮ ನೂತನ ನಿವಾಸ</span>
+              <Sparkles size={16} className="text-amber-600" />
+            </div>
+            <p className="text-xs font-sans text-stone-500 tracking-wide uppercase">
+              Our New Residence
+            </p>
           </div>
 
           {/* Live Countdown */}
@@ -174,7 +180,7 @@ export default function HousewarmingInvite() {
 
             <div className="flex items-start justify-center gap-2 text-stone-700 text-sm text-center px-2">
               <MapPin size={16} className="text-amber-700 shrink-0 mt-0.5" />
-              <span>Kempapura, Kumbarahalli Main Rd Opp sampadha gas godown Chikkabanavara, Kempapura, Karnataka 560090</span>
+              <span>Kempapura, Kumbarahalli Main Rd, Opp Sampadha Gas Godown, Chikkabanavara, Kempapura, Karnataka 560090</span>
             </div>
 
             {/* Clickable Mobile Call Button */}
@@ -201,15 +207,3 @@ export default function HousewarmingInvite() {
             <div className="flex gap-3 justify-center">
               <button
                 onClick={() => handleRSVP(true)}
-                className={`flex-1 py-3 rounded-xl text-sm font-semibold transition ${
-                  rsvpState === 'attending'
-                    ? 'bg-amber-600 text-white shadow-md'
-                    : 'bg-amber-100 text-amber-900 hover:bg-amber-200'
-                }`}
-              >
-                ಖಂಡಿತ ಬರುತ್ತೇವೆ • I'll Be There
-              </button>
-              <button
-                onClick={() => handleRSVP(false)}
-                className={`flex-1 py-3 rounded-xl text-sm font-medium border transition ${
-                  rsvpState === 'missing'
