@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Volume2, VolumeX, Key, MapPin, Calendar, Phone, Home, Sparkles } from 'lucide-react';
+import { Volume2, VolumeX, Key, MapPin, Calendar, Home, Sparkles } from 'lucide-react';
 
 export default function HousewarmingInvite() {
   const [isOpen, setIsOpen] = useState(false);
@@ -178,13 +178,6 @@ export default function HousewarmingInvite() {
               <span>Kempapura, Kumbarahalli Main Rd, Opp Sampadha Gas Godown, Chikkabanavara, Kempapura, Karnataka 560090</span>
             </div>
 
-            <div className="flex items-center justify-center gap-2 text-stone-700 text-sm pt-1">
-              <Phone size={16} className="text-amber-700 shrink-0" />
-              <a href="tel:+910000000000" className="font-semibold text-amber-900 underline underline-offset-4">
-                +91 00000 00000
-              </a>
-            </div>
-
             <a
               href="https://google.com"
               target="_blank"
@@ -214,3 +207,14 @@ export default function HousewarmingInvite() {
                 className={`flex-1 py-3 rounded-xl text-sm font-medium border transition ${
                   rsvpState === 'missing'
                     ? 'bg-stone-200 text-stone-800 border-stone-400'
+                    : 'border-stone-300 text-stone-600 hover:bg-stone-100'
+                }`}
+              >
+                I'll Miss It
+              </button>
+            </div>
+
+            {rsvpState === 'attending' && (
+              <p className="text-sm text-amber-800 font-medium">
+                Thank you! Can't wait to celebrate with you! 🎉
+              </p>
