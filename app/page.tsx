@@ -11,7 +11,7 @@ export default function HousewarmingInvite() {
   const [rsvpState, setRsvpState] = useState<'attending' | 'missing' | null>(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, mins: 0, secs: 0 });
 
-  const eventDate = new Date('2026-12-15T10:00:00');
+  const eventDate = new Date('2026-11-22T10:00:00');
 
   useEffect(() => {
     const sound = new Audio('https://pixabay.com');
@@ -149,14 +149,14 @@ export default function HousewarmingInvite() {
             <h3 className="font-serif text-lg text-amber-900">Venue Details</h3>
             <div className="flex items-center justify-center gap-2 text-stone-700 text-sm">
               <Calendar size={16} className="text-amber-700" />
-              <span>15 December 2026, 10:00 AM</span>
+              <span>15 November 2026, 10:00 AM</span>
             </div>
             <div className="flex items-center justify-center gap-2 text-stone-700 text-sm">
               <MapPin size={16} className="text-amber-700" />
               <span>Plot 42, Green Avenue, Kerala, India</span>
             </div>
             <a
-              href="https://google.com"
+              href="https://maps.app.goo.gl/67J4Rj3k3KnjR5Go7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-2 text-xs bg-stone-900 text-amber-100 px-5 py-2.5 rounded-full font-medium tracking-wide shadow-sm hover:bg-stone-800 transition"
